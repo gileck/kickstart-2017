@@ -15,6 +15,7 @@ Requirements
     - e.g. <http://lorempixel.com/200/200/sports/1/>
   - When clicked, should lead to the original sized image
     - e.g. <http://lorempixel.com/800/800/sports/1/>
-  - Should have a title (the thing on hover, just the HTML of it)
+  - Should have a caption (the thing on hover, just the HTML of it)
   - Show some text if the image URL is broken (also important for Accessibility) 
   - **Bonus:** What is the most appropriate HTML to describe an image with a caption?
+  - **Bonus2:** On image hover, show a small tooltip with the caption (HTML only)
