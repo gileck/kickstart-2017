@@ -1,0 +1,9 @@
+{
+  "generator-wix-js": {
+    "promptValues": {
+      "authorName": "Nir Moav",
+      "authorEmail": "nirm@wix.com",
+      "groupId": "com.wixpress.kickstart2017"
+    }
+  }
+}

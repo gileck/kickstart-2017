@@ -1,0 +1,19 @@
+.App {
+  padding: 25px 50px;
+}
+
+.settings-panel {
+  border: 1px solid #000000;
+  width: 300px;
+  height: 400px;
+  padding: 10px;
+}
+
+.notification {
+  border: 1px solid #7777ff;
+  border-radius: 5px;
+  display: inline-block;
+  max-height: 40px;
+  position: relative;
+  padding: 10px;
+}
