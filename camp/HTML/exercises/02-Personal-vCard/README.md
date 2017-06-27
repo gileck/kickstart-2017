@@ -16,7 +16,7 @@ Guidelines
 
 - Resist thinking about the design and focus on choosing the most appropriate HTML elements
 - If you're using a `div` or a `span`, there's probably a better way
-- Check out the reference links to know what exists 
+- Check out the reference links to know what exists
 
 Reference
 ----------
