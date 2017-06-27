@@ -8,10 +8,10 @@ Requirements
 -------------
 
 - Build the HTML of the page
-- Map should point to `Nemal Tel Aviv, Tel Aviv-Yafo`
-- Ignore the icons inside the form elements
-- Add a label above the "Message" box saying `How can I help you?`
-  - Clicking the label should focus the cursor inside the box
-- "Email" and "URL" inputs should not accept invalid values
-- Clicking "Send Message" should send the form and get back to the home page
-- **Bonus:** The data of the form should be present in the URL after jumping to the home page
+- The map should point to `Nemal Tel Aviv, Tel Aviv-Yafo`
+- Clicking each label should focus the cursor inside the form element it is related to
+- "Name" and "Email" inputs should be required (show error if empty)
+- "Email" should show an error if the email is invalid
+- Clicking "Send" should send the form and get back to the home page
+- **Bonus:** The data of the form should be present in the URL after jumping to the Welcome
+  - e.g. `?name=Alex&email=name@email.com&subject=Bug&message=Map doesn't work`
