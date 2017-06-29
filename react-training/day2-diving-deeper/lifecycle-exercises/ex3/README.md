@@ -21,3 +21,11 @@
       a. If it is **before** the Notification was displayed, it should hide the box and not show any Notification. (make sure there are no errors in the console).
 
       b. If it is **after** the message is displayed, it should hide the boxes.
+
+
+> **Important Notes**
+  You must use the comps given to you: **Notification** & **SettingsPanel**!
+
+>You are not allowed to merge them or erase them.
+But you can/should make changes to the components as necessary to finish the task.
+
