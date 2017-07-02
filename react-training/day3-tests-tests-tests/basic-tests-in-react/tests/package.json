@@ -73,6 +73,16 @@
     }
   },
   "eslintConfig": {
-    "___DISABLED_ESLINT___extends": "wix/react"
+    "___DISABLED_ESLINT___extends": "wix/react",
+    "parserOptions": {
+        "ecmaVersion": 8,
+        "sourceType": "module",
+        "ecmaFeatures": {
+            "jsx": true
+        }
+    },
+    "rules": {
+        "semi": 2
+    }
   }
 }
