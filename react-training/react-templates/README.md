@@ -49,6 +49,7 @@ That panel will have a button that is always aligned with its bottom-right corne
 
 12. Create a tree of pages (normal, blog, and ecom) and sections from hard-coded data (see below). Each tree folder is collapsible on click. The nodes should have a nested index (1, 1.1, 1.2, 1.2.1, etc.):
  
+ ```javascript
     var pages = {
         normal: [
             {
@@ -77,7 +78,7 @@ That panel will have a button that is always aligned with its bottom-right corne
             { title: 'My blog page 2' }
         ]
     };
- 
+``` 
  
 Bonus: Try to solve the last assignment by using no more than 2 components.
 
