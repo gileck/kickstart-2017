@@ -1,7 +1,7 @@
 # React-Templates Workshop - Exercises
 
 ## Overview
-Down below is a list of training exercises for using **React Templates** for building Panels and React applications. (Panels are components that have a lot of HTML code and non-reusable logic.) You can use [Hello React Templates](https://github.com/wix/hello-react-templates) as a starting point for your projects or use the [Yeoman generator](https://github.com/wix/generator-react-templates).
+Down below is a list of training exercises for using [**React Templates**](http://wix.github.io/react-templates/index.html) for building Panels and React applications. (Panels are components that have a lot of HTML code and non-reusable logic.) You can use [Hello React Templates](https://github.com/wix/hello-react-templates) as a starting point for your projects or use the [Yeoman generator](https://github.com/wix/generator-react-templates).
 Also, if you are using IntelliJ or WebStorm, make sure you have the [react-templates plugin](https://plugins.jetbrains.com/plugin/7648-react-templates) installed.
 
 ## Slides
