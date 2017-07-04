@@ -1,0 +1,38 @@
+import React from 'react';
+import ReactDOM from 'react-dom';
+import ReactTestUtils from 'react-dom/test-utils';
+
+import Counter from './counter';
+
+
+describe('Counter tests', () => {
+    describe('DOM structure of Counter', () => {
+        it('should have a wrapping DIV with a proper class name', () => {
+            // ============ NATIVE DOM TEST ============
+            const rootDiv = document.createElement('div');
+            const counterComp = ReactDOM.render(<Counter />, rootDiv);
+            
+            const counterDOMNode = ReactDOM.findDOMNode(counterComp);
+
+            expect(counterDOMNode.tagName).toEqual('DIV');
+            expect(counterDOMNode.className).toEqual('counter');
+        });
+
+        it('should have a heading element with "Count:" in it', () => {
+            // ============ TEST UTILS TEST ============
+            const counterComp = ReactTestUtils.renderIntoDocument(<Counter />);
+            const counterHeadingDOMNode = ReactTestUtils.findRenderedDOMComponentWithTag(counterComp, 'h1');
+
+            expect(counterHeadingDOMNode.tagName).toEqual('H1');
+            expect(counterHeadingDOMNode.textContent).toEqual('Count:');
+        });
+
+        it('should have a span element wrapping the value of the counter', () => {
+            const counterComp = ReactTestUtils.renderIntoDocument(<Counter />);
+            const counterValueDOMNode = ReactTestUtils.findRenderedDOMComponentWithTag(counterComp, 'span');
+
+            expect(counterValueDOMNode.tagName).toEqual('SPAN');
+            expect(counterValueDOMNode.textContent).toEqual('0');
+        });
+    });
+});
