@@ -6,9 +6,9 @@
 
 
 ## Exercises
-  * Add tests to the “World Clocks Wall” App you created
-  * Test the clock displays the correct time
+ Add tests to the “[World Clocks Wall](https://github.com/wix-private/kickstart-2017/tree/master/react-training/day2-diving-deeper/world-clocks-wall)” App you created:
   * Test the clock displays the correct label
+  * Test the clock displays the correct time
   * Test you can remove the Clock
   * Test you can edit the Clock’s label and it changes later in the DOM
   * Test you can add a new Clock and it shows on the Wall
