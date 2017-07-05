@@ -213,6 +213,62 @@ When the app start - use the data from the `LocalStorage`. If there isn't data t
 ### Add Stocks Page
 * Search for stocks withouth clicking on the search button (on-the-fly filtering). Beware from making multiple HTTP requests.
 
+### Store the data on the server
+Save the portfolio symbols on the server instead of `Local Storage`
+
+##### List Saved Symbols
+Lists the saved symbols (notice: the server is not persistent so the list will be lost when you restart it)
+
+* **URL** /symbol
+* **Method:** `GET`
+* **Success Response:**
+  * **Code:** 200 <br />
+  * **Content:**
+  ```JSON
+  ["MSFT","AAPL","GOOG","CSCO","ORCL","INTC","WIX","AMZN","EBAY","DELL","QCOM","YHOO"]
+  ```
+* **Sample Call:** `/symbol`
+
+
+##### Save Symbol
+Save a new symbol
+
+* **URL** /symbol/:symbol
+* **Method:** `POST`
+*  **URL Params**
+   **Required:**
+   `:symbol` - The symbol to save
+* **Success Response:**
+  * **Code:** 200 <br />
+  * **Content:**
+  ```JSON
+  true
+  ```
+* **Error Response:**
+  * i.e. cannot add the same symbol twice (case insensitive)
+  * **Code:** 500 <br />
+* **Sample Call:** `/symbol/WIX`
+
+
+##### Remove a Symbol
+Removes the symbol from the server memory
+
+* **URL** /symbol/:symbol
+* **Method:** `DELETE`
+*  **URL Params**
+   **Required:**
+   `:symbol` - The symbol to remove
+* **Success Response:**
+  * **Code:** 200 <br />
+  * **Content:**
+  ```JSON
+  true
+  ```
+* **Error Response:**
+  * i.e. the symbol to remove was not found
+  * **Code:** 500 <br />
+* **Sample Call:** `/symbol/GOOG`
+
 ### Stock Detail Page (Bonus)
 This screen is up to you to implement. It should display additional data of a specific stock.
 For example, latest news about the stack / more numerical data / change graph, etc... Go wild!
