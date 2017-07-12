@@ -1,72 +1,101 @@
-# Stock Sicker
+# Stokr - The Stock Ticker
 > A stock ticker is a report of the price for certain securities, updated continuously throughout the trading session by the various stock exchanges. A "tick" is any change in price, whether that movement is up or down.
 
 ## What It Does
-The stock ticker displays a list of favorite stocks with their current value and daily change in percentages and value.
+The stock ticker displays a list of favorite stocks (portfolio) with their current value and daily change in percentages and value.
 
-Stocks can be added or removed from the list. Their order in the list can be changed. The list can be filtered by some conditions.
+Stocks can be added or removed from the portfolio. Their order in the portfolio can be changed. The list can be filtered by some conditions.
 
 The selected symbols should be saved locally.
 
-The Stocks data should be updated periodically (every 5 minutes) or when triggerred by the user.
+The Stocks data should be updated periodically (every 5 minutes) or when triggered by the user.
 
 There are two screens needs to be implemented - "Stocks List" and "Add Stocks".
 
 ## Stocks List Page
-### Header
-The header should have a logo, an edit button and refresh button.
-When clicking on the referesh button, the stocks should be updated.
+Display a list of selected stocks and their data from the portfolio. 
 
-The edit button should toggle Edit/View mode (more below).
+### Header
+#### Components:
+* Logo
+* Search button
+* Settings button
+* Filter button
+* Refresh button
+
+#### Behavior:
+* The search button changes the view to the Add Stocks view.
+* The settings button toggles between Edit/View modes (more below).
+* The filter button opens/closes a small section to filter visible stocks (more below). 
+* The refresh button updates the stocks data.
 
 ### List of Stocks
-This is a a table where each line represents a stock.
-Each line should look like this:
+A list of items, where each line represents stock's data.
 
-```
-Symbol (Name) | Price | Daily Change
-```
+#### Components
+* Remove stock button (displayed **only** in edit mode)
+* Stock symbol
+* Stock name
+* Current stock price
+* Daily change
+* Up/Down arrows (should **not** be displayed in Filter mode) 
 
-The `Daily Change` should be changed on click:
+#### Behavior
+
+* Remove stock button should appear only in edit mode
+
+* The `Daily Change` should toggle on click:
 - Change in percentage (+0.15%)
 - Change in value (+0.01)
+- Capital market (6.4B) *Implement this when have using real data*
 
-in `Edit` mode, the following should be added
-- X button to remove a stock.
-- Up/Down arrows to decide the order of the displayed stock.
+* The Up/Down arrows decides the order of the displayed stock.
 
-### Filtering
-By default, this section is collapsed and opens on click.
-It allows filtering the stocks by the following criterias:
+
+### Filter Section
+#### Components
+* Filter inputs
+* Apply button
+
+#### Behavior 
+* By default, this section is collapsed and opens when clicking on the filter button in the header.
+
+* Filter the stocks by the following criteria:
 - By Symbol/Name: a single input that filters on both symbol and name (at least one must be satisfied to disply the stock).
 - By Trend: A select box, selecting between All/Losing/Gaining.
-- By Price Range: From __ To __. (TODO - not defined well enough).
+- By Price Range: From __ To __ (daily percentage).
 
-Filters will be reflected by clicking the Apply button.
-
-### Footer
-A single Add Stocks button to move to Add Stocks page
+* Filters will be reflected when clicking the Apply button.
 
 ## Add Stocks Page
+> Search for new stocks to add by their name or symbol
+
 ### Header
-The header should include a serch input and a search button. The search is based on the stock Symbol only.
+#### Components
+* Search Field
+* Cancel Button
 
-Display an empty view if didn't search a stock yet and an error message if search didn't match any stock.
+#### Behavior
+* Cancel button should navigate back to the stocks list page.
 
-### Possible Stocks
-A list of possible stocks (by their symbol). Each line represnets a stock should look like this:
-```
-Symbol (Name) | Type | Exchange Name
-```
+### Empty View
+* Display some message if didn't search any stock yet.
+* Display an error message if search didn't return any stock.
 
-`Type` is either "Stock" or "Futures".
+### Candidate Stocks
+A list of possible stocks. Each line represents a stock and should look like this:
+#### Components
+* Symbol
+* Name
+* Add button
+* Type and Exchange name (optional)
 
-Once results apper, the user can select multiple stocks and click the `Add` button. Clicking will navigate back to the stocks list screen.
+#### Behavior
+* Click the add button will add the stock to the portfolio and navigate back to the stocks list page.
+* Cancel button will navigate to the stocks list screen without adding stocks.
 
-The cancel button will navigate to the stocks list screen without adding stocks.
-
-## Retrieving Data
-### Static Mocked Data
+# Data
+## Static Mocked Data
 As a first step, use the data structures below.
 
 1. Stocks Symbol List. Defines which stocks needs to be displayed and their order
@@ -147,28 +176,38 @@ As a first step, use the data structures below.
 ]
 ```
 
-#### Stokr-Server
+## Real Data - Stokr Server
 
-To get the required information about symbols and stock, we use the Yahoo finance platform. We've created a Node Express server that simplifies Yahoo's API.
+To get the real data about symbols and stocks, we use the Yahoo finance platform. You're encouraged to use a pre-created NodeJS Express server that simplifies Yahoo's API.
 
 Install the server
-
 ```
 npm i -g stokr-server
 ```
-
 Run the server (will run on `http://localhost:7000`)
 
-```
-stokr-server
-```
+### Stokr Server API
 
-#### API
+#### Get quotes' (stocks) details by symbols
+Get quotes information by symbols
 
-##### Search Symbol
+* **URL** `/quotes`
+* **Method:** `GET`
+*  **URL Params**
+   **Required:**
+   `q=[string]` - Comma separated symbols
+* **Success Response:**
+  * **Code:** 200 <br />
+  * **Content:**
+  ```JSON
+  {"query":{"count":2,"created":"2017-06-07T15:19:22Z","lang":"en-US","diagnostics":{"publiclyCallable":"true","url":{"execution-start-time":"8","execution-stop-time":"16","execution-time":"8","content":"http://api.finance.yahoo.com:4080/v1/quote/symbol/GOOG%2CWIX?view=detail&format=xml"},"javascript":{"execution-start-time":"5","execution-stop-time":"19","execution-time":"14","instructions-used":"2502","table-name":"pm.finance"},"user-time":"20","service-time":"8","build-version":"2.0.137"},"results":{"quote":[{"symbol":"GOOG","Name":"Alphabet Inc.","Symbol":"GOOG","Open":"979.649963","DaysHigh":"984.140015","DaysLow":"977.260010","MarketCapitalization":"683.555B","YearHigh":"988.250000","YearLow":"663.284000","Volume":"511997","AverageDailyVolume":"-","PERatio":"33.063560","LastTradePriceOnly":"978.450012","Change":"1.880005","realtime_price":"978.450012","realtime_change":"1.880005","realtime_chg_percent":"0.192511","eps_curr_year":"29.593000","realtime_ts":"6 07 2017 15:19:00 GMT","ts":"6 07 2017 15:19:00 GMT"},{"symbol":"WIX","Name":"Wix.com Ltd.","Symbol":"WIX","Open":"77.750000","DaysHigh":"79.500000","DaysLow":"77.449997","MarketCapitalization":"3.591B","YearHigh":"86.150000","YearLow":"26.310000","Volume":"411468","AverageDailyVolume":"-","PERatio":null,"LastTradePriceOnly":"79.000000","Change":"1.250000","realtime_price":"79.000000","realtime_change":"1.250000","realtime_chg_percent":"1.607717","eps_curr_year":"-1.110000","realtime_ts":"6 07 2017 15:18:01 GMT","ts":"6 07 2017 15:18:01 GMT"}]}}}
+  ```
+* **Sample Call:** `/quotes?q=GOOG,WIX`
+
+#### Search Symbol
 Search a quote (stock) symbol by company name or any free text
 
-* **URL** /search
+* **URL** `/search`
 * **Method:** `GET`
 *  **URL Params**
    **Required:**
@@ -181,45 +220,34 @@ Search a quote (stock) symbol by company name or any free text
   ```
 * **Sample Call:** `/search?q=google`
 
-##### Get quote (stock) details by symbol
-Get quotes information by symbol
-
-* **URL** /quotes
-* **Method:** `GET`
-*  **URL Params**
-   **Required:**
-   `q=[string]` - Comma seperated symbols
-* **Success Response:**
-  * **Code:** 200 <br />
-  * **Content:**
-  ```JSON
-  {"query":{"count":2,"created":"2017-06-07T15:19:22Z","lang":"en-US","diagnostics":{"publiclyCallable":"true","url":{"execution-start-time":"8","execution-stop-time":"16","execution-time":"8","content":"http://api.finance.yahoo.com:4080/v1/quote/symbol/GOOG%2CWIX?view=detail&format=xml"},"javascript":{"execution-start-time":"5","execution-stop-time":"19","execution-time":"14","instructions-used":"2502","table-name":"pm.finance"},"user-time":"20","service-time":"8","build-version":"2.0.137"},"results":{"quote":[{"symbol":"GOOG","Name":"Alphabet Inc.","Symbol":"GOOG","Open":"979.649963","DaysHigh":"984.140015","DaysLow":"977.260010","MarketCapitalization":"683.555B","YearHigh":"988.250000","YearLow":"663.284000","Volume":"511997","AverageDailyVolume":"-","PERatio":"33.063560","LastTradePriceOnly":"978.450012","Change":"1.880005","realtime_price":"978.450012","realtime_change":"1.880005","realtime_chg_percent":"0.192511","eps_curr_year":"29.593000","realtime_ts":"6 07 2017 15:19:00 GMT","ts":"6 07 2017 15:19:00 GMT"},{"symbol":"WIX","Name":"Wix.com Ltd.","Symbol":"WIX","Open":"77.750000","DaysHigh":"79.500000","DaysLow":"77.449997","MarketCapitalization":"3.591B","YearHigh":"86.150000","YearLow":"26.310000","Volume":"411468","AverageDailyVolume":"-","PERatio":null,"LastTradePriceOnly":"79.000000","Change":"1.250000","realtime_price":"79.000000","realtime_change":"1.250000","realtime_chg_percent":"1.607717","eps_curr_year":"-1.110000","realtime_ts":"6 07 2017 15:18:01 GMT","ts":"6 07 2017 15:18:01 GMT"}]}}}
-  ```
-* **Sample Call:** `/quotes?q=GOOG,WIX`
-
-### Storing data
-You should use the `LocalStorage` mechanism to save your favorite stocks and their order.
-When the app start - use the data from the `LocalStorage`. If there isn't data there, use the "Stocks Symbol List" data defined previously.
+### Storing the data
+You should use the `LocalStorage` mechanism to save your portfolio's stocks and their order.
+When the app start - use the data from the `LocalStorage`. If there isn't data there, use the "Stocks Symbol List" data defined previously in the mocked data.
 
 
-## Bonus Section
-### Animations
+# Bonus Section - Pages
+## Animations
 * When moving between screens.
 * When list items appear.
 
-### Stocks List
+## Stocks List Page
 * Filter the stocks in the Stocks List screen without clicking on the apply button (on-the-fly filtering)
 
-### Add Stocks Page
-* Search for stocks withouth clicking on the search button (on-the-fly filtering). Beware from making multiple HTTP requests.
+## Add Stocks Page
+* Search for stocks without clicking on the search button (on-the-fly filtering). Beware from making multiple HTTP requests.
+* Allow adding multiple stocks at once.
 
-### Store the data on the server
-Save the portfolio symbols on the server instead of `Local Storage`
+## Stock Detail Page (Bonus)
+This screen is up to you to implement. It should display additional data of a specific stock.
+For example, latest news about the stack / more numerical data / change graph, etc... Go wild!
 
-##### List Saved Symbols
-Lists the saved symbols (notice: the server is not persistent so the list will be lost when you restart it)
+# Bonus Section - API
+* Save portfolio stocks in the server (instead of using `LocalStorage`) by using the following API:
 
-* **URL** /symbol
+## List Saved Symbols
+Lists the saved symbols (notice: the server is not persistent so the list will be lost when you restart it).
+
+* **URL** `/symbol`
 * **Method:** `GET`
 * **Success Response:**
   * **Code:** 200 <br />
@@ -229,11 +257,10 @@ Lists the saved symbols (notice: the server is not persistent so the list will b
   ```
 * **Sample Call:** `/symbol`
 
+## Save Symbol
+Saves a new symbol.
 
-##### Save Symbol
-Save a new symbol
-
-* **URL** /symbol/:symbol
+* **URL** `/symbol/:symbol`
 * **Method:** `POST`
 *  **URL Params**
    **Required:**
@@ -249,11 +276,10 @@ Save a new symbol
   * **Code:** 500 <br />
 * **Sample Call:** `/symbol/WIX`
 
-
-##### Remove a Symbol
+## Remove a Symbol
 Removes the symbol from the server memory
 
-* **URL** /symbol/:symbol
+* **URL** `/symbol/:symbol`
 * **Method:** `DELETE`
 *  **URL Params**
    **Required:**
@@ -267,8 +293,4 @@ Removes the symbol from the server memory
 * **Error Response:**
   * i.e. the symbol to remove was not found
   * **Code:** 500 <br />
-* **Sample Call:** `/symbol/GOOG`
-
-### Stock Detail Page (Bonus)
-This screen is up to you to implement. It should display additional data of a specific stock.
-For example, latest news about the stack / more numerical data / change graph, etc... Go wild!
+* **Sample Call:** `/symbol/GOOG` 
