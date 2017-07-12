@@ -8,7 +8,7 @@ Exercises
 ----------
 
 - [Mostly Fluid](../../exercises/270-mostly-fluid.html)
-- [Column Drop](../../exercises/280-column drop.html)
+- [Column Drop](../../exercises/280-column%20drop.html)
 - [Layout Shifter](../../exercises/290-layout-shifter.html)
 - [Off Canvas - Right Sidebar](../../exercises/300-off-canvas-right.html)
 - [Navigation Toggle](../../exercises/310-navigation-toggle.html)
