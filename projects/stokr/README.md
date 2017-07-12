@@ -68,7 +68,7 @@ A list of items, where each line represents stock's data.
 * Filters will be reflected when clicking the Apply button.
 
 ## Add Stocks Page
-> Search for new stocks to add by their name or symbol
+Search for new stocks to add by their name or symbol
 
 ### Header
 #### Components
