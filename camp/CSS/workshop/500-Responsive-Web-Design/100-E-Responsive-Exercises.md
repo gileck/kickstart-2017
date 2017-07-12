@@ -31,3 +31,10 @@ Guidelines
 - Put Media Quires at the bottom of the CSS
 - Do not touch the HTML
 - No need to set `height` anywhere
+
+### Screen sizes as seen in the exercises
+
+- Desktop - `1440px`
+- Medium screen - `1024px`
+- Tablet - `768px`
+- Mobile - `320px`
