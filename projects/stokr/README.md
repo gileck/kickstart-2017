@@ -1,6 +1,21 @@
 # Stokr - The Stock Ticker
 > A stock ticker is a report of the price for certain securities, updated continuously throughout the trading session by the various stock exchanges. A "tick" is any change in price, whether that movement is up or down.
 
+* [What It Does](#what-it-does)
+* [Stocks List Page](#stocks-list-page)
+	* [Header](#header)
+	* [List Of Stocks](#list-of-stocks)
+	* [Filter Section](#filter-section)
+* [Add Stocks Page](#add-stocks-page)
+	* [Header](#header-1)
+	* [Candidate Stocks](#candidate-stocks)
+* [Data](#data)
+	* [Static Mocked Data](#static-mocked-data)
+	* [Real Data - Stokr Server](#real-data---stokr-server)
+	* [Storing The Data](#storing-the-data)
+* [Bonus Section - Pages](#bonus-section---pages)
+* [Bonus Section - API](#bonus-section---api)
+
 ## What It Does
 The stock ticker displays a list of favorite stocks (portfolio) with their current value and daily change in percentages and value.
 
