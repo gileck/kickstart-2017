@@ -76,7 +76,7 @@ A list of items, where each line represents stock's data.
 * By default, this section is collapsed and opens when clicking on the filter button in the header.
 
 * Filter the stocks by the following criteria:
-- By Symbol/Name: a single input that filters on both symbol and name (at least one must be satisfied to disply the stock).
+- By Symbol/Name: a single input that filters on both symbol and name (at least one must be satisfied to display the stock).
 - By Trend: A select box, selecting between All/Losing/Gaining.
 - By Price Range: From __ To __ (daily percentage).
 
