@@ -35,4 +35,3 @@ console.log(arrayOfChars.join(''));
  * And all the above methods...
  * And how to get all the characters in a Unicode reliant way
  */
-/* eslint no-console: 0 */

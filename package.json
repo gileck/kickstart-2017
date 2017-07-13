@@ -16,6 +16,8 @@
   "homepage": "https://github.com/wix-private/kickstart-2017#readme",
   "private": true,
   "devDependencies": {
-    "check-all-markdown": "1.3.0"
+    "babel-eslint": "7.2.3",
+    "check-all-markdown": "1.3.0",
+    "eslint": "4.2.0"
   }
 }

@@ -1,6 +1,8 @@
+/* eslint eqeqeq: 0 */
+
 function assert(booleanTest) {
   if (booleanTest) {
-    console.log('true!');
+    console.log('true that!');
   }
   else {
     console.log('false...');
@@ -11,12 +13,10 @@ assert(7 == 7);
 assert('77' == 77);
 assert('77' === 77); // false
 assert(7 != 8);
-assert('78' != 77);
-assert('77' !== 77); // true
+assert('78' != 78); // false
+assert('78' !== 78);
 
 /**
- * The dofference between === and ==
- * Always use ==
- * Same for !== and !===
+ * === vs. ==
+ * != vs. !==
  */
-/* eslint eqeqeq: 0 */

@@ -1,6 +1,6 @@
 function greetWorld(greeting) {
   console.log(greeting);
-  console.log('goodby cruel world');
+  console.log('goodbye cruel world');
 }
 
 greetWorld('hello world');

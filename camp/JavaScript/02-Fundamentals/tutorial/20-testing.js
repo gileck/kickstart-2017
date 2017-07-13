@@ -1,3 +1,5 @@
+/* eslint no-else-return: 0 */
+
 function max(a, b) {
   if (a > b) {
     return a;
@@ -15,10 +17,9 @@ if (max(5, 4) !== 5) {
   throw 'failed!';
 }
 
-// Code:
 console.log(max(7, 9));
 
 /**
  * Tests
+ * throw
  */
-/* eslint no-else-return: 0 */

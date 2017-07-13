@@ -5,7 +5,7 @@ Self-closing tags
 
 ```html
 <input type="text">
-<input type="text" value="Alex">
+<input type="text" value="John Doe">
 <input type="text" value="" placeholder="Enter your name">
 ```
 

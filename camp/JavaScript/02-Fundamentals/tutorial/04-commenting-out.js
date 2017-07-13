@@ -1,4 +1,4 @@
-//console.log('hello, world');
+// console.log('hello, world');
 console.log('goodbye cruel world');
 
 /*
@@ -10,4 +10,3 @@ console.log('gagaga');
  * Commenting out single line
  * Commenting out sections
  */
-/* eslint spaced-comment: 0 */

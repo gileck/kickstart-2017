@@ -1,6 +1,6 @@
 function greetWorld() {
   console.log('hello, world');
-  console.log('goodby cruel world');
+  console.log('goodbye cruel world');
 }
 
 greetWorld();
@@ -9,6 +9,8 @@ greetWorld();
 
 /**
  * functions
- * names are usually camelCase.
  * calling functions
+ *
+ * Best Practice:
+ * camelCase naming for functions and variables
  */

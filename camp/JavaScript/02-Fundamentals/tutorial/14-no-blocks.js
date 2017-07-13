@@ -1,3 +1,5 @@
+/* eslint curly: 0 */
+
 function printMax(a, b) {
   if (a > b)
     console.log(a);
@@ -8,7 +10,8 @@ function printMax(a, b) {
 printMax(4, 6);
 
 /**
- * floating point numbers
- * negative numbers
+ * Dreaded missing curly
+ *
+ * Best Practice:
+ * Always add curly braces to avoid implicit blocks
  */
-/* eslint curly: 0*/

@@ -21,10 +21,14 @@ function greet(gender, age, name) {
 // So we are passing null because we are not using the "this" keyword in our greet function.
 const greetAdultMale = greet.bind(null, 'male', 45);
 
-greetAdultMale('John Doe');  // "Hello, Mr. John Doe."
-greetAdultMale('Peter Pan'); // "Hello, Mr. Peter Pan."
+greetAdultMale('John Doe');
+// "Hello, Mr. John Doe."
+greetAdultMale('Peter Pan');
+// "Hello, Mr. Peter Pan."
 
 const greetYoungster = greet.bind(null, '', 16);
 
-greetYoungster('Alex');          // "Hey, Alex."
-greetYoungster('Emma Waterloo'); // "Hey, Emma Waterloo."
+greetYoungster('Mike');
+// "Hey, Mike."
+greetYoungster('Emma Waterloo');
+// "Hey, Emma Waterloo."

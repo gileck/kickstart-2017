@@ -3,11 +3,11 @@ function printAverage(a, b, c) {
 }
 
 printAverage(4, 5, 6);
+
 console.log(4 * 5);
-console.log (12 % 5);
-console.log(2 ** 4);
+console.log(12 % 5);
 
 /**
- * dividing and multiplyging, and remainder
+ * dividing and multiplying, and remainder
  * parentheses
  */

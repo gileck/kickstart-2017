@@ -15,6 +15,6 @@ boolValue('asdfklhsdfkjh');
 boolValue([]);
 boolValue({});
 
-/*
-** false/true vs. falsy/truthy
-*/
+/**
+ * false/true vs. falsy/truthy
+ */

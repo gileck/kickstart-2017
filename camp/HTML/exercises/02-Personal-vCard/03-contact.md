@@ -14,4 +14,4 @@ Requirements
 - "Email" should show an error if the email is invalid
 - Clicking "Send" should send the form and get back to the home page
 - **Bonus:** The data of the form should be present in the URL after jumping to the Welcome
-  - e.g. `?name=Alex&email=name@email.com&subject=Bug&message=Map doesn't work`
+  - e.g. `?name=John&email=name@email.com&subject=Bug&message=Map doesn't work`

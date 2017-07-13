@@ -11,4 +11,5 @@ printMax(4, 6);
 
 /**
  * else
+ * else if
  */

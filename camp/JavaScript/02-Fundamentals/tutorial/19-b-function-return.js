@@ -1,3 +1,5 @@
+/* eslint no-else-return: 0 */
+
 function max(a, b) {
   if (a > b) {
     return a;
@@ -10,6 +12,12 @@ function max(a, b) {
 console.log(max(4, 6));
 
 /**
- * Same, but better. Why? Because we can test it!
+ * Same, but better. Why?
+ * - Reusable for other purposes
+ * - Easier to reason about
+ * - Easier to test
+ *
+ * Best Practice:
+ * - no-else-return
+ * - Ternary operator, if it's a short line
  */
-/* eslint no-else-return: 0 */
