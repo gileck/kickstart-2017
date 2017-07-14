@@ -4,6 +4,7 @@ arr.push('bye');
 console.log(arr);
 
 const last = arr.pop();
+
 console.log(last);
 console.log(arr);
 
@@ -25,4 +26,3 @@ console.log(another);
  * sort - sorts an array (mutates)
  * More... https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/Array/prototype
  */
-/* eslint newline-after-var: 0 */

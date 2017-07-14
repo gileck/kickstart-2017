@@ -18,7 +18,7 @@ function arrayIsEqual(arr1, arr2) {
   }
 
   for (const i in arr1) {
-    if (arr1[i] !== arr2[2]) {
+    if (arr1[i] !== arr2[i]) {
       return false;
     }
   }
@@ -28,5 +28,5 @@ function arrayIsEqual(arr1, arr2) {
 
 /**
  * arrayIsEqual - our first complex function!
- * The "search" pattern - "if"" within "for"
+ * The "search" pattern - "if" within "for"
  */

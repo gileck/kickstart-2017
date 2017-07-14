@@ -1,9 +1,11 @@
+/* eslint quotes: 0 */
+
 const cities = ['Tel Aviv', 'Jerusalem', 'Haifa'];
 
 cities[2] = "B'eer Sheva";
 console.log(cities);
 
-cities[3] = "Nazareth";
+cities[3] = 'Nazareth';
 console.log(cities);
 
 /**
@@ -11,4 +13,3 @@ console.log(cities);
  * Appending to the array using the assignment operator
  * Double quotes due to single quotes in string
  */
-/* eslint quotes: 0 */

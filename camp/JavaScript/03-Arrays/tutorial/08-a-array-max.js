@@ -25,7 +25,6 @@ if (arrayMax([14]) !== 14) {
 }
 
 /**
- * let vs const
  * our first algorithm!
  * what happens if we send it an empty array?
  */

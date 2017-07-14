@@ -8,8 +8,8 @@ function map(arr, func) {
   return ret;
 }
 
-console.log(map([2, 5, 3], (n) => n + 1));
-console.log(map([2, 5, 3], (n) => n - 1));
+console.log(map([2, 5, 3], n => n + 1));
+console.log(map([2, 5, 3], n => n - 1));
 
 /**
  * Functions as values ("first-class citizens")

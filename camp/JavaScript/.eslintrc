@@ -23,8 +23,6 @@
   "rules": {
     // Disabled
     "no-console": 0,
-    "no-inline-comments": 0,
-    "no-constant-condition": 0,
 
     // Warning
     "max-len": [1, { "code": 100, "ignoreUrls": true }],
@@ -51,21 +49,26 @@
     "eol-last": 1,
     "no-trailing-spaces": 1,
     "semi": [1, "always"],
+    "semi-style": [1, "last"],
+    "semi-spacing": [1, {"before": false, "after": true}],
+    "no-extra-semi": 1,
     "no-multiple-empty-lines": [1, { "max": 1 }],
+    "no-useless-constructor": 1,
 
     "strict": [1, "never"],
     "indent": [1, 2, { "SwitchCase": 1 }],
     "quotes": [1, "single", { "allowTemplateLiterals": true }],
     "linebreak-style": [1, "unix"],
     "no-else-return": 1,
-    "brace-style": [1, "stroustrup", { "allowSingleLine": false }],
+    "brace-style": [1, "1tbs", { "allowSingleLine": false }],
     "curly": [1, "all"],
     "object-curly-spacing": [1, "always"],
-    "arrow-parens": [1, "always"],
+    "arrow-parens": [1, "as-needed"],
     "space-before-blocks": [1, "always"],
     "arrow-spacing": 1,
     "keyword-spacing": 1,
     "spaced-comment": [1, "always", { "exceptions": ["-"] }],
+    "switch-colon-spacing": [1, {"before": false, "after": true}],
     "no-nested-ternary": 1,
     "no-unneeded-ternary": [1, { "defaultAssignment": false }],
     "no-var": 1,
@@ -80,7 +83,9 @@
     {
       "files": ["**/exercises/**/*.js", "**/exercises/*.js"],
       "rules": {
-        "no-unused-vars": 0
+        "no-unused-vars": 0,
+        "no-inline-comments": 0,
+        "no-constant-condition": 0
       }
     }
   ]
