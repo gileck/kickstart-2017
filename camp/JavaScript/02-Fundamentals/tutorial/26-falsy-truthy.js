@@ -1,8 +1,7 @@
 function boolValue(a) {
   if (a) {
     console.log('truthy');
-  }
-  else {
+  } else {
     console.log('falsy');
   }
 }

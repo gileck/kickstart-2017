@@ -3,8 +3,7 @@
 function assert(booleanTest) {
   if (booleanTest) {
     console.log('true that!');
-  }
-  else {
+  } else {
     console.log('false...');
   }
 }

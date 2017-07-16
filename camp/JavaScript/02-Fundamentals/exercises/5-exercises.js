@@ -15,8 +15,8 @@ function isEven(num) {
 /**
  * Write a function that checks whether a number is odd or not. Use isEven.
  *
- * isOdd(5) ==> false
- * isOdd(896) ==> true
+ * isOdd(5) ==> true
+ * isOdd(896) ==> false
  */
 function isOdd(num) {
 
