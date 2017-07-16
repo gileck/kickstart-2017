@@ -34,7 +34,7 @@ Relevant SVG assets are supplied under the `assets` folder.
 You can find all design mock ups [here](https://zpl.io/Z2wuNsg). Here's an example:
 
 <p align="center">
-  <img width="350" src="images/stokr.png"/>
+  <img width="350" src="assets/images/stokr.png"/>
 </p>
 
 ## Stocks List Page
