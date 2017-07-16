@@ -27,6 +27,15 @@ The Stocks data should be updated periodically (every 5 minutes) or when trigger
 
 There are two screens needs to be implemented - "Stocks List" and "Add Stocks".
 
+## Assets and Mock-ups
+Relevant SVG assets are supplied under the `assets` folder.
+
+You can find all design mock ups [here](https://zpl.io/Z2wuNsg). Here's an example:
+
+<p align="center">
+  <img width="350" src="images/stokr.png"/>
+</p>
+
 ## Stocks List Page
 Display a list of selected stocks and their data from the portfolio. 
 
