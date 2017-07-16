@@ -2,6 +2,7 @@
 > A stock ticker is a report of the price for certain securities, updated continuously throughout the trading session by the various stock exchanges. A "tick" is any change in price, whether that movement is up or down.
 
 * [What It Does](#what-it-does)
+* [Assets And Mock-ups](#assets-and-mock-ups)
 * [Stocks List Page](#stocks-list-page)
 	* [Header](#header)
 	* [List Of Stocks](#list-of-stocks)
@@ -27,7 +28,7 @@ The Stocks data should be updated periodically (every 5 minutes) or when trigger
 
 There are two screens needs to be implemented - "Stocks List" and "Add Stocks".
 
-## Assets and Mock-ups
+## Assets And Mock-ups
 Relevant SVG assets are supplied under the `assets` folder.
 
 You can find all design mock ups [here](https://zpl.io/Z2wuNsg). Here's an example:
