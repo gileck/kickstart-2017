@@ -9,6 +9,12 @@
   <head>
     <meta charset="UTF-8">
     <title>Document</title>
+
+    <style>
+      .hidden {
+        display: none;
+      }
+    </style>
   </head>
   <body>
     <main></main>
@@ -51,14 +57,22 @@
         info.forEach((song) => {
           const liElm = document.createElement('li');
           const h1Elm = document.createElement('h1');
+          const pWrapElm = document.createElement('div');
 
-          h1Elm.textContent = song.title;
-          liElm.appendChild(h1Elm);
-
-          song.text.forEach((line) => {
-            addParagraph(liElm, line);
+          h1Elm.addEventListener('click', (e) => {
+            pWrapElm.classList.toggle('hidden');
           });
 
+          pWrapElm.classList.add('hidden');
+
+          h1Elm.textContent = song.title;
+
+          song.text.forEach((line) => {
+            addParagraph(pWrapElm, line);
+          });
+
+          liElm.appendChild(h1Elm);
+          liElm.appendChild(pWrapElm);
           ulElm.appendChild(liElm);
         });
 
