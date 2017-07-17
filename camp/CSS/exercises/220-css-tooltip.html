@@ -8,6 +8,32 @@
     /* the tooltip will be applied to any element, containing data-title attribute */
     /* the tooltip */
     /* the pointer */
+
+    [data-title]:hover::after {
+      content: ".";
+      position: absolute;
+      width: 4px;
+      height: 10px;
+      background-color: black;
+      margin-top: 22px;
+      margin-left: -26px;
+      padding: 6px;
+      transform: rotate(45deg);
+      color: black;
+    }
+
+    [data-title]:hover::before {
+      content: attr(data-title);
+      position: absolute;
+      width: 100px;
+      height: 100px;
+      color: white;
+      background-color: black;
+      margin-top: 28px;
+      padding: 9px;
+      border-radius: 12px;
+    }
+
   </style>
 
 </head>

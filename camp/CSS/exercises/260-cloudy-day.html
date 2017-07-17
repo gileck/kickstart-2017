@@ -6,12 +6,125 @@
   <title>Cloudy Day</title>
 
   <style>
+    body {
+      width: 100vw;
+      height: 100vh;
+      background: url('grass.png') repeat-x bottom, linear-gradient(#C9DBE9, #FFF);
+    }
+
+    @keyframes animateCloud {
+      0% {
+        left: 120%;
+      }
+      10% {
+        left: 80%;
+      }
+
+      90% {
+        left:5%;
+      }
+      100% {
+        left:-40%;
+      }
+    }
+
+    .x1 {
+      animation: animateCloud 6s linear infinite;
+      transform: scale(0.65);
+      top: 100px;
+      opacity:0.6;
+    }
+    .x2 {
+      animation: animateCloud 7s linear infinite;
+      transform: scale(0.45);
+      top: 300px;
+      opacity:0.7;
+
+    }
+    .x3 {
+      animation: animateCloud 9s linear infinite;
+      transform: scale(0.85);
+      top: 500px;
+      opacity:0.75;
+
+    }
+    .x4 {
+      animation: animateCloud 10s linear infinite;
+      transform: scale(0.65);
+      top: 50px;
+      opacity:0.8;
+
+    }
+    .x5 {
+      animation: animateCloud 12s linear infinite;
+      transform: scale(1);
+      top: 250px;
+      opacity:0.8;
+
+    }
+
+    .x{
+      position: absolute;
+    }
+    .x:hover {
+      animation-play-state: paused;
+      cursor: pointer;
+      opacity:1;
+    }
+
+    .x:hover > .cloud {
+      background: darkslategrey;
+    }
+    .x:hover > .cloud:after,.x:hover > .cloud:before {
+      background-color: darkslategrey
+    }
+
+
+    .cloud {
+      background: #fff;
+      transition: background .5s;
+      border-radius: 100px;
+      box-shadow: 0 8px 5px rgba(0, 0, 0, 0.1);
+      height: 120px;
+      position: relative;
+      width: 350px;
+    }
+
+    .cloud:after, .cloud:before {
+      background: #fff;
+      content: '';
+      position: absolute;
+      z-indeX: -1;
+      transition: background .5s;
+    }
+
+    .cloud:after {
+      border-radius: 100px;
+      height: 100px;
+      left: 50px;
+      top: -50px;
+      width: 100px;
+    }
+
+    .cloud:before {
+      border-radius: 200px;
+      width: 180px;
+      height: 180px;
+      right: 50px;
+      top: -90px;
+    }
 
   </style>
 </head>
 
 <body>
-
+  <div class="x x1">
+    <div class="cloud"></div>
+  </div>
+  <div class="x x2"><div class="cloud"></div></div>
+  <div class="x x3"><div class="cloud"></div></div>
+  <div class="x x4"><div class="cloud"></div></div>
+  <div class="x x5"><div class="cloud"></div></div>
 
 
 </body>

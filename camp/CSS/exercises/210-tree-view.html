@@ -12,6 +12,10 @@
       margin: 3px 0;
     }
 
+    ul {
+      list-style: none;
+    }
+
     .treeview {
       font: normal 11px Arial, Sans-serif;
       user-select: none;
@@ -28,6 +32,56 @@
     .treeview input + label + ul {
       margin: 0 0 0 22px;
     }
+
+    input[type=checkbox] {
+      display: none;
+    }
+
+    .treeview ul {
+      display: none;
+    }
+
+    .treeview > ul {
+      display: block;
+    }
+
+    label,a {
+      padding-left: 20px;
+    }
+
+    label {
+      background: url("assets/techniques/tree-view-images/folder-closed.png") no-repeat;
+    }
+    input[type=checkbox]:checked ~ ul {
+      display: block;
+    }
+
+    input[type=checkbox]:checked ~ label {
+      background: url("assets/techniques/tree-view-images/folder-open.png") no-repeat;
+    }
+
+    a[href$="png"] {
+      background: url("assets/techniques/tree-view-images/document-image.png") no-repeat;
+    }
+
+    a[href$="json"] {
+      background: url("assets/techniques/tree-view-images/document-code.png") no-repeat;
+    }
+
+    label {
+      cursor: pointer;
+    }
+
+    input[disabled] + label {
+      color: gray;
+      cursor: default;
+    }
+
+
+
+
+
+
 
     /* Bonus */
 

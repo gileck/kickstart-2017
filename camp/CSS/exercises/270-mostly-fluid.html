@@ -1,4 +1,42 @@
 <!doctype html>
+<style>
+  @media (max-width: 1440px) {  }
+  @media (max-width: 1024px) {  }
+  @media (max-width: 768px) {  }
+  @media (max-width: 320px) {  }
+
+  body {
+    max-width: 960px;
+    margin:auto;
+  }
+
+  .c {
+    display: flex;
+    flex-wrap: wrap;
+  }
+
+  .main {
+    background: lightgreen;
+  }
+
+  .c2 {
+    background: #00ee20;
+    width:50%;
+    align-self: baseline;
+  }
+
+  .c3 {
+    background: #007427;
+    width:50%;
+  }
+
+  @media (max-width: 960px) {
+    .c2,.c3 {
+      width: 100%;
+    }
+  }
+
+</style>
 <html lang="en">
   <head>
     <meta charset="UTF-8">
