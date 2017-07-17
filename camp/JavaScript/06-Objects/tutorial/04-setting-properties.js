@@ -6,7 +6,7 @@ const currentPresident = {
 currentPresident.firstName = 'Mr.';
 currentPresident.lastName = 'President';
 
-function fullNameOfPresident (president) {
+function fullNameOfPresident(president) {
   return `${president.firstName} ${president.lastName}`;
 }
 

@@ -10,7 +10,7 @@ const currentPresident = {
 
 console.log(currentPresident['first-name'], currentPresident['last-name']);
 
-function fullNameOfPresident (president) {
+function fullNameOfPresident(president) {
   return `${president['first-name']} ${president['last-name']}`;
 }
 

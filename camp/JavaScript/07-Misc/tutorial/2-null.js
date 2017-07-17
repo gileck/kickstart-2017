@@ -10,8 +10,8 @@ function findItem(array, func) {
 
 let foo;
 
-console.log(findItem([4, 5, 6], (n) => n > 5));
-console.log(findItem([4, 5, 6], (n) => n > 7));
+console.log(findItem([4, 5, 6], n => n > 5));
+console.log(findItem([4, 5, 6], n => n > 7));
 console.log(typeof null);
 console.log(foo);
 

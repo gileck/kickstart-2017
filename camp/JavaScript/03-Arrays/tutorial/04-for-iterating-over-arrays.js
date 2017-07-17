@@ -7,8 +7,9 @@ for (let i = 0; i < cities.length; i++) {
   console.log(cities[i]);
 }
 
-for (const i in cities) {
-  console.log(cities[i]);
+// Usually used for Objects
+for (const index in cities) {
+  console.log(index, cities[index]);
 }
 
 // New, no support in IE at all (even 11):
@@ -17,9 +18,9 @@ for (const city of cities) {
   console.log(city);
 }
 
-// Functional, great support
-cities.forEach(function (city) {
-  console.log(city);
+// Functional, great support, most commonly used
+cities.forEach(function (city, index) {
+  console.log(index, city);
 });
 
 /**

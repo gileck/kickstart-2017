@@ -1,7 +1,8 @@
 let mexicanBalance = 10000;
 
 const mexicans = {
-  extractMoney: (howMuch) => {
+  // Shorthand
+  extractMoney(howMuch) {
     mexicanBalance -= howMuch;
 
     return mexicanBalance;
@@ -11,7 +12,7 @@ const mexicans = {
 const currentPresident = {
   firstName: 'Donald',
   lastName: 'Trump',
-  tweet: (issue) => `${issue} is because of the Democrats. SAD!`,
+  tweet: issue => `${issue} is because of the Democrats. SAD!`,
   buildWall: function () {
     const mexicanNewBalance = mexicans.extractMoney(100);
 

@@ -1,3 +1,5 @@
+/* eslint no-useless-call: 0 */
+
 /**
  * Strings
  */
@@ -23,8 +25,6 @@ function sum(a, b) {
 console.log(sum.name);
 console.log(sum.apply(null, [4, 6]));
 
-/* eslint no-useless-call: 0 */
-
 /**
- * Strings, arrays, and functions - we always already treated it like an object!
+ * Strings, arrays, and functions - we already treated it like an object!
  */

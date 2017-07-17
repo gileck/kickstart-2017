@@ -24,7 +24,7 @@ for (const ch of stringWithUnicode) {
 // iterate by turning it into an array
 const arrayOfChars = Array.from(stringWithUnicode);
 
-console.log(arrayOfChars.filter((x) => x !== 'o'));
+console.log(arrayOfChars.filter(x => x !== 'o'));
 
 // turn it back into a string
 
