@@ -211,6 +211,17 @@ npm i -g stokr-server
 ```
 Run the server (will run on `http://localhost:7000`)
 
+```
+stokr-server
+```
+
+In case the default key & secret don't work you can [registr a new Yahoo application](https://developer.yahoo.com/apps/) and then run the server:
+
+
+```
+stokr-server -k <key> -s <secret>
+```
+
 ### Stokr Server API
 
 #### Get quotes' (stocks) details by symbols
