@@ -9,6 +9,9 @@
  *                                                     5
  */
 function forEach(array, func) {
+  for (let i = 0; i < array.length; i++) {
+    func(array[i])
+  }
 
 }
 
@@ -30,7 +33,14 @@ function forEach(array, func) {
  * Then it returns reducedValue
  */
 function reduce(array, func, initialValue) {
+  let sum = initialValue;
+  for (let i = 0; i < array.length; i++) {
+    sum = func(sum,array[i]);
+  }
+  return sum;
 }
+test("reduce",reduce([4, 5, 6], (a, b) => a + b, 0),4 + 5 + 6);
+
 
 /**
  * Bonus:
@@ -52,4 +62,11 @@ function sumOfPairs(array) {
  */
 function max(array) {
 
+}
+
+function test(name,result,expected) {
+  console.log("result: " + result);
+  console.log("expected: " + expected);
+  if (JSON.stringify(expected) !== JSON.stringify(result)) console.log(name + ": ERROR");
+  else console.log(name + ": OK");
 }

@@ -12,6 +12,17 @@
   <main></main>
   <script>
     // Write your code here.
+    let h1 = document.createElement("h1");                 // Create a <li> node
+    let p = document.createElement("p");                 // Create a <li> node
+    let textnode = document.createTextNode("What did I do");         // Create a text node
+    let textnode2 = document.createTextNode("I did it!");         // Create a text node
+    let main = document.getElementsByTagName("main")[0];
+    h1.appendChild(textnode);                              // Append the text to <li>
+    p.appendChild(textnode2);                              // Append the text to <li>
+    main.appendChild(h1);
+    main.appendChild(p);
+
   </script>
 </body>
 </html>
+

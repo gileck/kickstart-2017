@@ -9,7 +9,14 @@
  * isAllBlanks('') => true
  */
 function isAllBlanks(str) {
+   for (let i = 0; i < str.length; i++) {
+     if (str[i] !== " ") return false;
+   }
+   return true;
 }
+
+test("isAllBlank",isAllBlanks('   '),true)
+test("isAllBlank",isAllBlanks('  x '),false)
 
 /**
  * Truncates to a specific width, with ellipsis characters if needed.
@@ -23,7 +30,20 @@ function isAllBlanks(str) {
  * How do you know if a parameter was passed? Its value is undefined!
  */
 function truncate(str, maxLength, ellipsis) {
+  if (!maxLength || str.length <= maxLength) return str;
+  if (!ellipsis) ellipsis = '';
+  str = str.substring(0,maxLength - ellipsis.length);
+  str = str + ellipsis;
+  return str;
 }
+
+console.log("----")
+test("truncate",truncate('Robin Hood'),'Robin Hood');
+console.log("----")
+test("truncate",truncate('Robin Hood', 5),'Robin');
+test("truncate",truncate('Robin Hood', 5, '!!'),'Rob!!');
+test("truncate",truncate('Robin', 5, '!!'),'Robin');
+test("truncate",truncate('Rob', 5, '!!'),'Rob');
 
 /**
  * Bonus:
@@ -35,8 +55,15 @@ function truncate(str, maxLength, ellipsis) {
  * remove('Robin Hood', 'zzz') ==> 'Robin Hood'
  */
 function remove(str, substring) {
-
+  var regex = new RegExp(substring,"g");
+  return str.replace(regex,"")
 }
+
+test("remove",remove('Robin Hood', ' '),'RobinHood');
+test("remove",remove('Robin Hood', 'Ho'),'Robin od');
+test("remove",remove('Robin Hood', 'o'),'Rbin Hd');
+test("remove",remove('Robin Hood', 'zzz'),'Robin Hood');
+
 
 /**
  * Capitalize the words in the sentence. You can use split and join to separate the words and bring
@@ -48,6 +75,7 @@ function remove(str, substring) {
  * capitalize('robin    hood') ==> 'Robin Hood'
  */
 function capitalize(str) {
+
 }
 
 /**
@@ -72,4 +100,12 @@ function toInt(str) {
  */
 function toStr(num) {
 
+}
+
+function test(name,result,expected) {
+  console.log("----")
+  console.log("result: " + result);
+  console.log("expected: " + expected);
+  if (JSON.stringify(expected) !== JSON.stringify(result)) console.log(name + ": ERROR");
+  else console.log(name + ": OK");
 }

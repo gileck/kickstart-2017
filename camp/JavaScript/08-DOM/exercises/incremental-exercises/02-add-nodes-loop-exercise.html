@@ -14,8 +14,15 @@
   <script>
     // Write your code here.
     function addParagraph(containerElement, paragraphText) {
-
+      let main = document.getElementsByTagName("main")[0];
+      containerElement.appendChild(document.createTextNode(paragraphText));
+      main.appendChild(containerElement);
     }
+
+    for (let i = 0; i < 30; i++) {
+        addParagraph(document.createElement("p"),"yayy");
+    }
+
   </script>
 </body>
 </html>

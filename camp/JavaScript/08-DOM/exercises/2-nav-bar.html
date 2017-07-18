@@ -5,14 +5,72 @@
   <title>Document</title>
 </head>
 <body>
-  <nav id="main-menu">
-    <!-- Dynamic content from JavaScript will go here -->
-  </nav>
+  <nav id="main-menu"></nav>
 
   <script>
-    function buildNavigation(navigation, underThisNode) {
-
+    function closeAllLists() {
+      let uls = document.querySelectorAll("ul");
+      for (let i = 0; i < uls.length; i++) {
+        if (uls[i].id !== "header") {
+          uls[i].style.display = "none";
+        }
+      }
     }
+
+    function openPathList(current) {
+        if (!current || !current.style) return;
+        current.style.display = "block";
+        openPathList(current.parentNode);
+    }
+
+    function openSubMenu(event) {
+      let subMenu = event.target.parentElement.querySelector('ul');
+      console.log(subMenu)
+      if (!subMenu) return;
+      event.stopPropagation();
+
+      if (subMenu.style.display === "none") {
+        closeAllLists(subMenu);
+        openPathList(subMenu);
+      } else {
+        subMenu.style.display = "none";
+      }
+    }
+
+    function buildNavigation(navigation, underThisNode, isMainMenu) {
+      let ul = document.createElement("ul");
+      if (isMainMenu) {
+        ul.setAttribute("id","main-menu");
+      } else {
+        ul.setAttribute("style","display:none");
+      }
+
+      underThisNode.appendChild(ul);
+
+      navigation.forEach(element => {
+          let li = document.createElement("li");
+          let innerElement;
+
+          if (element.href) {
+            innerElement = document.createElement("a");
+            innerElement.textContent = element.title;
+            innerElement.setAttribute("href",element.href);
+          } else {
+            innerElement = document.createElement("span");
+            innerElement.textContent = element.title;
+            innerElement.setAttribute("class","menu-link")
+          }
+
+          li.appendChild(innerElement);
+          ul.appendChild(li);
+
+          if (element.children) {
+              li.addEventListener("click",openSubMenu);
+              buildNavigation(element.children,li);
+          }
+      });
+    }
+
   </script>
   <script>
     const navigation = [
@@ -23,8 +81,16 @@
       {
         title: 'Courses',
         children: [
-          { title: 'FED', href: '#2' },
-          { title: 'UX', href: '#3' }
+          { title: 'FED', children: [
+              { title: 'FED-israel', href: '#5' },
+              { title: 'FED-usa', href: '#7' }
+            ]
+          },
+          { title: 'UX',children: [
+              { title: 'UX-israel', href: '#5' },
+              { title: 'UX-usa', href: '#7' }
+            ]
+          }
         ]
       },
       {
@@ -36,7 +102,16 @@
       }
     ];
 
-    buildNavigation(navigation, document.getElementById('main-menu'));
+    buildNavigation(navigation, document.getElementById('main-menu'), true);
   </script>
 </body>
 </html>
+
+<style>
+  .menu-link:hover {
+    color: lightblue;
+  }
+  .menu-link {
+    cursor: pointer;
+  }
+</style>

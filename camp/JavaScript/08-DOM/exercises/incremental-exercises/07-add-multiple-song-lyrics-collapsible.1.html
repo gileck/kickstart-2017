@@ -12,45 +12,95 @@
 </head>
 <body>
   <main></main>
-  <script>
-    const queenSongs = [
-      {
-        title: "Don't stop me now",
-        text: [
-          "Don't stop me now I'm having such a good time",
-          "I'm having a ball",
-          "Don't stop me now",
-          "If you wanna have a good time just give me a call",
-          "Don't stop me now ('Cause I'm having a good time)",
-          "Don't stop me now (Yes I'm havin' a good time)",
-          "I don't want to stop at all"
-        ]
-      },
-      {
-        title: "Bohemian Raphsody",
-        text: [
-          "Is this the real life?",
-          "Is this just fantasy?",
-          "Caught in a landslide,",
-          "No escape from reality.",
-          "Open your eyes,",
-          "Look up to the skies and see,",
-          "I'm just a poor boy, I need no sympathy,",
-          "Because I'm easy come, easy go,",
-          "Little high, little low,",
-          "Any way the wind blows doesn't really matter to me, to me."
-        ]
-      }
-    ]
-
-    // Write your code here.
-    function addSongLyrics(info) {
-
-    }
-
-    function addParagraph(containerElement, paragraphText) {
-
-    }
-  </script>
 </body>
 </html>
+<script>
+  const queenSongs = [
+    {
+      title: "Don't stop me now",
+      text: [
+        "Don't stop me now I'm having such a good time",
+        "I'm having a ball",
+        "Don't stop me now",
+        "If you wanna have a good time just give me a call",
+        "Don't stop me now ('Cause I'm having a good time)",
+        "Don't stop me now (Yes I'm havin' a good time)",
+        "I don't want to stop at all"
+      ]
+    },
+    {
+      title: "Bohemian Raphsody",
+      text: [
+        "Is this the real life?",
+        "Is this just fantasy?",
+        "Caught in a landslide,",
+        "No escape from reality.",
+        "Open your eyes,",
+        "Look up to the skies and see,",
+        "I'm just a poor boy, I need no sympathy,",
+        "Because I'm easy come, easy go,",
+        "Little high, little low,",
+        "Any way the wind blows doesn't really matter to me, to me."
+      ]
+    }
+  ];
+
+  queenSongs.forEach(addSongLyrics);
+
+  let lines = document.getElementsByTagName("p");
+  for (let i = 0; i < lines.length; i++) {
+    let line = lines[i];
+    let text = line.innerHTML;
+    let firstword = text.split(" ")[0];
+    let boldElement = document.createElement("b");
+    let textElement = document.createTextNode(firstword);
+    boldElement.appendChild(textElement);
+    text = text.substr(text.indexOf(" "));
+    let textElement2 = document.createTextNode(text);
+    line.innerHTML = "";
+    line.appendChild(boldElement);
+    line.appendChild(textElement2);
+  }
+
+  let h1 = document.getElementsByTagName("h1");
+  let p = document.getElementsByTagName("p");
+  for (let i = 0; i < p.length; i++) {
+    p[i].setAttribute("style","display:none");
+  }
+
+  for (let i = 0; i < h1.length; i++) {
+    h1[i].setAttribute("style","cursor: pointer");
+
+    h1[i].addEventListener("click",function (event) {
+      let elements = document.getElementsByClassName(event.target.className);
+      for (let i = 0; i < elements.length; i++) {
+        if (elements[i].tagName === "H1") continue;
+        if (elements[i].style.display === "none") {
+          elements[i].setAttribute("style","display: block")
+        } else {
+          elements[i].setAttribute("style","display: none")
+        }
+      }
+    });
+  }
+
+  function addSongLyrics(song) {
+    let main = document.getElementsByTagName("main")[0];
+    let h1 = document.createElement("h1");
+    let titleElement = document.createTextNode(song.title);
+    h1.appendChild(titleElement);
+    className = song.title.replace(/ /g,"")
+    h1.setAttribute("class",className);
+    main.appendChild(h1);
+    song.text.forEach(function (text) {
+      addParagraph(document.createElement("p"),text,className);
+    })
+  }
+
+  function addParagraph(containerElement, text, className) {
+    let main = document.getElementsByTagName("main")[0];
+    containerElement.appendChild(document.createTextNode(text));
+    main.appendChild(containerElement);
+    containerElement.setAttribute("class",className)
+  }
+</script>

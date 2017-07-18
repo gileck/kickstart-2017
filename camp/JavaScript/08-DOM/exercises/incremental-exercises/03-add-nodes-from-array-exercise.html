@@ -23,8 +23,14 @@
 
     // Write your code here.
     function addParagraph(containerElement, paragraphText) {
-
+      let main = document.getElementsByTagName("main")[0];
+      containerElement.appendChild(document.createTextNode(paragraphText));
+      main.appendChild(containerElement);
     }
+
+    paragraphTexts.forEach(function (text) {
+      addParagraph(document.createElement("p"),text)
+    })
   </script>
 </body>
 </html>

@@ -28,12 +28,22 @@
       };
 
       // Write your code here.
+      addSongLyrics(dontStopMeNowSong);
       function addSongLyrics(song) {
-
+        let main = document.getElementsByTagName("main")[0];
+        let h1 = document.createElement("h1");
+        let titleElement = document.createTextNode(song.title);
+        h1.appendChild(titleElement)
+        main.appendChild(h1);
+        song.text.forEach(function (text) {
+            addParagraph(document.createElement("p"),text);
+        })
       }
 
       function addParagraph(containerElement, paragraphText) {
-
+        let main = document.getElementsByTagName("main")[0];
+        containerElement.appendChild(document.createTextNode(paragraphText));
+        main.appendChild(containerElement);
       }
     </script>
   </body>

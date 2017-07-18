@@ -12,8 +12,10 @@
  *
  */
 function upperCaseArray(array) {
-
+  return array.map(item => item.toUpperCase());
 }
+
+test("upperCaseArray",upperCaseArray(['hello', 'world']), ['HELLO', 'WORLD']);
 
 /**
  * Use Array.filter to write a function below that returns
@@ -23,8 +25,11 @@ function upperCaseArray(array) {
  *
  */
 function onlyIncludes(array, str) {
-
+  return array.filter((item) => item.indexOf(str) !== -1)
 }
+
+test("onlyIncludes",onlyIncludes(['helloy', 'boy', 'Baby'],"oy"), ['helloy', 'boy']);
+
 
 /**
  * Write a function repeat that repeats a call to a function n times.
@@ -34,5 +39,25 @@ function onlyIncludes(array, str) {
  *                                              hi
  */
 function repeat(func, n) {
-
+  for(let i=0; i < n; i++){
+    func();
+  }
 }
+
+repeat(() => console.log('hi'), 3)
+
+function test(name,result,expected) {
+  // console.log("result: " + result);
+  // console.log("expected: " + expected);
+  if (JSON.stringify(expected) !== JSON.stringify(result)) console.log(name + ": ERROR");
+  else console.log(name + ": OK");
+}
+
+function isArrayEqual(array1,array2) {
+  if (array1.length !== array2.length) return false;
+  for (let i = 0; i < array1.length ; i++) {
+    if (array1[i] !== array2[i]) return false;
+  }
+  return true;
+}
+

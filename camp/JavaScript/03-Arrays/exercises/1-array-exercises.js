@@ -11,7 +11,7 @@
  * sum([]) => 0
  */
 function sum(array) {
-
+  return array.reduce((sum,current) => sum + current,0);
 }
 
 /**
@@ -22,7 +22,7 @@ function sum(array) {
  * average([]) => 0
  */
 function average(array) {
-
+  return sum(array) / array.length;
 }
 
 /**
@@ -32,7 +32,7 @@ function average(array) {
  * removeValue([4, 4, 4], 4) => []
  */
 function removeValue(array, value) {
-
+  return array.filter(item => item !== value);
 }
 
 /**
@@ -44,5 +44,20 @@ function removeValue(array, value) {
  * flatten([[]]) ==> []
  */
 function flatten(arrayOfArrays) {
-
+    return arrayOfArrays.reduce((array,item) => array.concat(item),[]);
 }
+
+test("sum",sum([1,2,3,4,5,6]),21);
+test("average",average([2,3,4]),3);
+test("removeValue",removeValue([4, 5, 6, 4, 3],4),[5,6,3]);
+test("flatten",flatten([[1, 2], [4, 3]]),[1,2,4,3]);
+
+function test(name,result,expected) {
+  if (JSON.stringify(expected) !== JSON.stringify(result)) console.log(name + ": ERROR");
+  else console.log(name + ": OK");
+}
+
+
+
+
+
