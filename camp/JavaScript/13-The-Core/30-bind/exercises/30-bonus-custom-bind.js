@@ -3,8 +3,13 @@
  * Support setting the context and passing extra arguments
  * Extra arguments are prepended to the bounded function arguments
  */
-Function.prototype.customBind = function () {
-  // Your code here
+Function.prototype.customBind = function (obj) {
+  let slice = Array.prototype.slice;
+  let args = arguments;
+  let target = this;
+  return function() {
+    return target.apply(obj,slice.call(args,1).concat(slice.call(arguments)))
+  }
 };
 
 /**
