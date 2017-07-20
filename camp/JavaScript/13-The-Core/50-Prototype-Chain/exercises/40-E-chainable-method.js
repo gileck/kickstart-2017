@@ -6,6 +6,10 @@ function Car(color) {
   this.color = color;
 }
 
+Car.prototype.changeColor = function (color) {
+  this.color = color;
+}
+
 const carA = new Car('red');
 const carB = new Car('blue');
 

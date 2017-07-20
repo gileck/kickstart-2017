@@ -6,7 +6,7 @@ function getFullName() {
  * Write the code to get the result below
  */
 function getResult() {
-  // Your code here
+  return getFullName.call({firstName: "John",lastName: "Doe"});
 }
 
 /**

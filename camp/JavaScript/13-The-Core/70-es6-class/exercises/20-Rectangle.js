@@ -19,6 +19,12 @@ class Polygon {
  * 2. Inherit from Polygon using extends
  */
 
+class Square extends Polygon {
+  constructor(size) {
+    super(size,size);
+  }
+}
+
 
 
 // width and height are equal in a square.

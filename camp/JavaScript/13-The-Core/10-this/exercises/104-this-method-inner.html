@@ -9,14 +9,17 @@
     },
     getPetAge: function () {
       // Your code here
+      let _this = this;
 
       function getPet() {
         // Your code here
+        return _this.pet;
       }
 
       // Don't touch below (except for debugging)
 
       const pet = getPet();
+
 
       return pet.age;
     }

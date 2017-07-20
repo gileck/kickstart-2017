@@ -5,6 +5,9 @@
  */
 function sum() {
   // Your code here
+  let res = 0;
+  Array.prototype.forEach.call(arguments,(item) => res += item);
+  return res;
 }
 
 /**

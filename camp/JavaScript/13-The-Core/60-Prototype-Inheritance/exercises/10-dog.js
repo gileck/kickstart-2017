@@ -1,8 +1,6 @@
 /**
  * Create Animal constructor function that Dog will inherit using "Object.create"
  */
-
-
 /**
  * Your code here
  * 1. Create Animal
@@ -10,6 +8,12 @@
  * 3. makeSound function will do "console.log(this.sound)"
  */
 
+
+function Animal() {}
+
+Animal.prototype.makeSound = function () {
+  console.log(this.sound);
+}
 
 
 

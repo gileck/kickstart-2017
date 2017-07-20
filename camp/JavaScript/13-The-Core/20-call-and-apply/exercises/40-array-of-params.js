@@ -2,7 +2,7 @@
  * Write the code to get the result below
  */
 function getMinimum(scores) {
-  // Your code here
+  return Math.max.apply(null,scores)
 }
 
 function getResult() {

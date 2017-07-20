@@ -3,8 +3,14 @@
  */
 
 function Car(brand) {
-  // your code here
+  this.brand = brand
 }
+
+Car.prototype.getBrand = function () {
+  return this.brand;
+};
+
+
 
 const beemer = new Car('BMW');
 

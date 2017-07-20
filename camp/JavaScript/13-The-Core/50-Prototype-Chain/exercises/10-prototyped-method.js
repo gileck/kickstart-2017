@@ -6,6 +6,10 @@ function Car() {
 
 }
 
+Car.prototype.isThisACar = function () {
+  return "I am a Car";
+};
+
 // Your code here
 
 const myCar = new Car();
