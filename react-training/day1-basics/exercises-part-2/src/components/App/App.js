@@ -33,7 +33,7 @@ const sandboxData = [
     mandatory: true
   },
   {
-    name: 'Canvas v2',
+    name: 'Canvas',
     description: `Change the canvas from #6 so that clicking on each cell will toggle the color (cycling between some colors, i.e. 'red', 'yellow', 'blue', 'orange')`
   },
   {
