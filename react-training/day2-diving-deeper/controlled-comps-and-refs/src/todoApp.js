@@ -12,18 +12,21 @@ class TodoApp extends Component {
   }
 
   addTask(e) {
-    // TODO - Implement here adding a new task to the Todo list
+    const newTasks = this.state.tasks.slice();
+    newTasks.unshift(Task(this.input.value));
+    this.setState({tasks: newTasks});
+    this.input.value = "";
   }
 
   render() {
     return (
       <div className="todo-app">
         <header>
-          Task:<input type="text" /><button onClick={e => this.addTask(e)}>Add</button>
+          Task:<input type="text" ref={input => this.input = input} /><button onClick={e => this.addTask(e)}>Add</button>
         </header>
         <main>
           <ul>
-            {this.state.tasks.map((task) => <li className='task'>{task.text}</li>)}
+            {this.state.tasks.map((task,i) => <li key={i} className='task'>{task.text}</li>)}
           </ul>
         </main>
       </div>
