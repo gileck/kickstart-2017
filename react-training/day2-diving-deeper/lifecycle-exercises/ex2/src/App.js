@@ -2,11 +2,31 @@ import React, { Component } from 'react';
 import './App.css';
 
 class Item extends Component {
-  render() {
+    shouldComponentUpdate(nextProps, nextState) {
+        return nextProps.value !== this.props.value;
+    }
+
+    render() {
     console.log('Rendering Item', this.props.value);
     return <div>{this.props.value}</div>;
   }
 }
+
+
+class List extends Component {
+
+    shouldComponentUpdate(nextProps, nextState) {
+        return nextProps.list.length !== this.props.list.length;
+    }
+
+    render() {
+        return (
+            <ul>
+                {this.props.list.map(item => <Item key={item} value={item} />)}
+            </ul>
+        )};
+};
+
 
 class ListApp extends Component {
 
@@ -27,7 +47,7 @@ class ListApp extends Component {
     }
   }
 
-  updateUserInput(e) {
+    updateUserInput(e) {
     this.setState({userInput: e.target.value});
   }
 
@@ -39,12 +59,11 @@ class ListApp extends Component {
           <input type="text" value={this.state.userInput} onChange={(e) => this.updateUserInput(e)} />
           <button onClick={e => this.addItem()}>Add</button>
         </div>
-        <ul>
-          {this.state.items.map(item => <Item key={item} value={item} />)}
-        </ul>
+       <List list={this.state.items} />
       </div>
     );
   }
 }
 
 export default ListApp;
+
