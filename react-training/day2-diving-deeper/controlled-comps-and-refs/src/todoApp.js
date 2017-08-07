@@ -16,6 +16,7 @@ class TodoApp extends Component {
     const newTasks = this.state.tasks.slice();
     newTasks.unshift(Task(this.state.inputText));
     this.setState({tasks: newTasks, inputText: ""});
+      this.inputText.focus();
   }
 
     onChange(e) {
@@ -26,7 +27,7 @@ class TodoApp extends Component {
     return (
       <div className="todo-app">
         <header>
-          Task:<input type="text" value={this.state.inputText} onChange={(e) => this.onChange(e)} /><button onClick={e => this.addTask(e)}>Add</button>
+          Task:<input type="text" ref={input => this.inputText = input} value={this.state.inputText} onChange={(e) => this.onChange(e)} /><button onClick={e => this.addTask(e)}>Add</button>
         </header>
         <main>
           <ul>
