@@ -113,7 +113,7 @@ export const TodoAppView = props => {
 export const TodoItem = props => {
     const textDecoration = props.done ? 'line-through' : '';
     return (<div>
-        <div className='todo-item' style={{textDecoration}} onClick={props.onToggle}>{props.title}</div>
+        <div className='todo-item' style={{textDecoration, display: "inline"}} onClick={props.onToggle}>{props.title}</div>
         <button onClick={() => props.onRemove()}>🗑</button>
     </div>);
 };
@@ -133,8 +133,8 @@ export class AddTodo extends React.Component {
 
     render() {
         return (<div>
-            <input onChange={(e) => this.handleChange(e)} />
-            <button className='add' onClick={() => this.props.onAddItem(this.state.value)}>Add item</button>
+            <input onChange={(e) => this.handleChange(e)} placeholder="Todo Name" />
+            <button className='add' onClick={() => this.props.onAddItem(this.state.value)}>New Todo</button>
         </div>)
     }
 }
