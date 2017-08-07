@@ -7,22 +7,26 @@ class TodoApp extends Component {
   constructor() {
     super();
     this.state = {
-      tasks: [Task('do something'), Task('do something else'), Task('one thing more')]
+      tasks: [Task('do something'), Task('do something else'), Task('one thing more')],
+        inputText: ""
     }
   }
 
   addTask(e) {
     const newTasks = this.state.tasks.slice();
-    newTasks.unshift(Task(this.input.value));
-    this.setState({tasks: newTasks});
-    this.input.value = "";
+    newTasks.unshift(Task(this.state.inputText));
+    this.setState({tasks: newTasks, inputText: ""});
   }
+
+    onChange(e) {
+      this.setState({inputText: e.target.value});
+    }
 
   render() {
     return (
       <div className="todo-app">
         <header>
-          Task:<input type="text" ref={input => this.input = input} /><button onClick={e => this.addTask(e)}>Add</button>
+          Task:<input type="text" value={this.state.inputText} onChange={(e) => this.onChange(e)} /><button onClick={e => this.addTask(e)}>Add</button>
         </header>
         <main>
           <ul>
