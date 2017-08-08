@@ -3,7 +3,13 @@ import 'jsdom-global/register';
 import React from 'react';
 import ReactDOM from 'react-dom';
 
-import {Title} from './Components';
+import chai,{expect} from 'chai';
+import sinon from 'sinon';
+import sinonChai from 'sinon-chai';
+chai.use(sinonChai);
+
+
+import {Title, SimpleGallery, Heading, TodoItem, TodoItem2, TodoApp, Framer,SimpleCanvas, SimpleCanvas2, SpecialButton} from './Components';
 
 import {expect} from 'chai';
 
@@ -17,6 +23,14 @@ const createTitleDriver = wrapper => ({
   getText: () => wrapper.querySelector('h1').textContent
 });
 
+const createGalleryDriver = comp => ({
+    getImages: () => comp.querySelectorAll("img")
+});
+
+const createSpecialButtonDriver = comp => ({
+    getButton: () => comp.querySelector("button");
+});
+
 describe('components', () => {
   describe('title', () => {
     it('should render the passed title', () => {
@@ -26,20 +40,28 @@ describe('components', () => {
     });
   });
 
-  // describe('simple gallery', () => {
-  //   it('should render images given', () => {
-  //     // const elem = renderComp(<SimpleGallery )≠≠
-  //   });
-  // });
+  describe('simple gallery', () => {
+    it('should render images given', () => {
+      const images = ["1","2","3"];
+      const elem = renderComp(<SimpleGallery images={images}/>);
+      const driver = createGalleryDriver(elem);
+      expect(images.length).to.eql(driver.getImages().length);
+    });
+  });
 
-  // describe('special button', () => {
-  //   it('should call the normal handler when clicked', () => {
+    describe('special button', () => {
+    it('should call the normal handler when clicked', () => {
+        const spyClick = sinon.spy();
+        const spySpecialClick = sinon.spy();
+        const elem = renderComp(<SpecialButton onSpecialClick={spyClick} onClick={spySpecialClick} />);
+        const driver = createSpecialButtonDriver(elem);
 
-  //   });
 
-  //   it('BONUS: should call the normal handler when specially clicked', () => {
+    });
 
-  //   });
-  // });
+    it('BONUS: should call the normal handler when specially clicked', () => {
+
+    });
+  });
 
 });
