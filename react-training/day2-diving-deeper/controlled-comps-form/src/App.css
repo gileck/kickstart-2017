@@ -1,1 +1,10 @@
 .app {}
+
+.input-div {
+    padding: 10px;
+ }
+
+input, select{
+    margin-left: 10px;
+}
+
