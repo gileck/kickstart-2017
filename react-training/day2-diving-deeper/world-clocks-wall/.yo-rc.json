@@ -1,0 +1,9 @@
+{
+  "generator-wix-js": {
+    "promptValues": {
+      "authorName": "Gil Eckstein",
+      "authorEmail": "gileck@wix.com",
+      "groupId": "com.wixpress.ks17"
+    }
+  }
+}

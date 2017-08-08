@@ -1,0 +1,68 @@
+@font-face {
+  font-family: 'digital-7';
+  src: url('./digital-7.ttf');
+  font-weight: normal;
+  font-style: normal;
+}
+
+
+.root {
+  text-align: center;
+}
+
+.header {
+  background-color: #222;
+  padding: 10px;
+  color: white;
+  font-size: 20pt;
+}
+
+.intro {
+  font-size: 15pt;
+}
+
+body {
+  text-align: center;
+  width: 50%;
+  margin: auto;
+  font-size: 20px
+}
+
+ul {
+  list-style: none;
+}
+
+ul li {
+  display: inline-block;
+}
+
+:global {
+  .clock-box {
+    border: 1px solid black;
+    display: inline-block;
+    border-radius: 10px;
+    padding: 0px 20px 0px 20px;
+    margin: 5px;
+    width: 140px;
+    height: 80px;
+  }
+
+  .clocks-wrapper {
+  }
+
+  .remove-button {
+    background: #ff6e5a;
+  }
+
+  .add-clock-input {
+    margin-left: 10px;
+  }
+
+  .time {
+    font-family: digital-7;
+    font-size: 25px;
+    margin-top: 5px;
+  }
+
+}
+
